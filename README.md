@@ -1,5 +1,5 @@
 # simple-hmac-auth-php
-PHP library for interfacing with APIs that implement HMAC signatures. Designed for use with a JSON API that uses [simple-hmac-auth](https://github.com/jessety/simple-hmac-auth).
+PHP library for interfacing with APIs that implement HMAC signatures. Designed for use with a JSON API that implements [simple-hmac-auth](https://github.com/jessety/simple-hmac-auth).
 
 ### Usage
 
