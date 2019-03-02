@@ -52,7 +52,7 @@ class SimpleHMACAuthClient {
 
     // Only sign these headers, no more
     $headersWhitelist = array(
-      'x-api-key',
+      'authorization',
       'date',
       'content-length',
       'content-type'
@@ -166,7 +166,7 @@ class SimpleHMACAuthClient {
 
     $headers = array(
       'date' => gmdate('D, d M Y H:i:s T'),
-      'x-api-key' => $this->apiKey
+      'authorization' => 'api-key ' . $this->apiKey
     );
 
     if ($input !== null) {
@@ -178,7 +178,7 @@ class SimpleHMACAuthClient {
 
       $signature = $this->sign($this->secret, $this->algorithm, $method, $path, $queryString, $headers, $input);
 
-      $headers['authorization'] = 'signature ' . $this->algorithm . ' ' . $signature;
+      $headers['signature'] = 'v2 ' . $this->algorithm . ' ' . $signature;
     }
 
     $http = 'https';
