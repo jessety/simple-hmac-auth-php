@@ -178,7 +178,7 @@ class SimpleHMACAuthClient {
 
       $signature = $this->sign($this->secret, $this->algorithm, $method, $path, $queryString, $headers, $input);
 
-      $headers['signature'] = 'v2 ' . $this->algorithm . ' ' . $signature;
+      $headers['signature'] = 'simple-hmac-auth ' . $this->algorithm . ' ' . $signature;
     }
 
     $http = 'https';
